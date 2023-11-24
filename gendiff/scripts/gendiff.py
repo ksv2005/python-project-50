@@ -3,6 +3,7 @@ import argparse
 import json
 
 
+# generates plain difference between two json files
 def generate_diff(file1, file2):
     result = ["{"]
     with open(file1) as f1:
