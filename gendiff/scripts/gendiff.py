@@ -34,7 +34,6 @@ def generate_json_diff(file1, file2):
 
 # generates plain difference between two yaml files
 def generate_yaml_diff(file1, file2):
-    result = ["{"]
     with open(file1) as f1:
         file1_data = safe_load(f1)
     with open(file2) as f2:
@@ -44,7 +43,8 @@ def generate_yaml_diff(file1, file2):
 
 
 def getFilesExtension(file1, file2):
-    if file1.split(".")[-1] in ["yml", "yaml"] and file2.split(".")[-1] in ["yml", "yaml"]:
+    if (file1.split(".")[-1] in ["yml", "yaml"]
+            and file2.split(".")[-1] in ["yml", "yaml"]):
         return "yaml"
     else:
         return "json"
